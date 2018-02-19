@@ -38,6 +38,35 @@ class NewCharacter:
                  'warlock', 
                  'wizard'
                  ]
+        
+        skills = ['Acrobatics',
+                'Animal Handling',
+                'Arcana',
+                'Athletics',
+                'Deception',
+                'History',
+                'Insight',
+                'Intimidation',
+                'Investigation',
+                'Medicine',
+                'Nature',
+                'Perception',
+                'Performance',
+                'Persuasion',
+                'Religion',
+                'Sleight of Hand',
+                'Stealth',
+                'Survival',]
+        
+        saving_throws = ['Strength',
+                'Dexterit',
+                'Constitution',
+                'Intelligence',
+                'Wisdom',
+                'Charisma']
+        
+        
+        
         def race_selection():
             print('\nRaces: ')
             for race in races:
@@ -98,9 +127,17 @@ class NewCharacter:
 
 carl = NewCharacter()
 carl.get_stats()
+
 package = 'races.' + carl.race
 name = carl.race.title()
 race = getattr(__import__(package, fromlist=[name]), name)
+
+package = 'classes.' + carl.cl_ss
+name = carl.cl_ss.title()
+cl_ss = getattr(__import__(package, fromlist=[name]), name)
+
+
+
 kaai = race(carl.base_stats)
 kaai.base_stats
 stats = carl.base_stats
